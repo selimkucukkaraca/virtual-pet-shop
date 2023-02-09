@@ -3,6 +3,8 @@ package com.pets.virtualpetshop.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @ToString
@@ -17,6 +19,7 @@ public class Pet extends BaseEntity {
     private PetType petType;
     private int age;
     private String gender;
+    private String publicId = UUID.randomUUID().toString();
 
     public Pet(PetType petType, int age, String gender) {
         this.petType = petType;

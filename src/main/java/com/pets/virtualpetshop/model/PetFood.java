@@ -3,6 +3,8 @@ package com.pets.virtualpetshop.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @ToString
@@ -16,6 +18,7 @@ public class PetFood extends BaseEntity {
     @ManyToOne
     private PetFoodType petFoodType;
     private int Kg;
+    private String publicId = UUID.randomUUID().toString();
 
     public PetFood(PetFoodType petFoodType, int kg) {
         this.petFoodType = petFoodType;
