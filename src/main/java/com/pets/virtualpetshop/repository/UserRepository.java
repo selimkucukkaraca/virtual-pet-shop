@@ -1,11 +1,11 @@
 package com.pets.virtualpetshop.repository;
 
-import com.pets.virtualpetshop.model.Seller;
+import com.pets.virtualpetshop.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface SellerRepository extends JpaRepository<Seller,Long> {
-    Optional<Seller> findSellerByMail(String mail);
+public interface UserRepository extends JpaRepository<User,Long> {
+    Optional<User> findSellerByMail(String mail);
     boolean existsSellerByMail(String mail);
 }
