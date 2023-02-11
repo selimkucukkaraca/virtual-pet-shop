@@ -6,6 +6,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @ToString
@@ -18,6 +20,8 @@ public class PetType extends BaseEntity {
     private Long id;
     private String typeOfAnimal;
     private String breedOfAnimal;
+    private String publicId = UUID.randomUUID().toString();
+
 
     public PetType(String typeOfAnimal, String breedOfAnimal) {
         this.typeOfAnimal = typeOfAnimal;
