@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class CreditCardDto extends BaseDto {
-
+public class PetFoodTypeDto extends BaseDto{
+    private String typeOfFood;
+    private String brand;
 }

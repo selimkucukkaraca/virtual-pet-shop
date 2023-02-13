@@ -19,7 +19,7 @@ public class PetService {
     private final ConfirmCodeService confirmCodeService;
     private final PetRepository petRepository;
     private final PetConverter petConverter;
-    private final ConfirmCodeRepository confirmCodeRepository;
+    private final ConfirmCodeRepository confirmCodeRepository; //TODO: create confirm code service class
 
     public PetService(MailSendService mailSendService,
                       ConfirmCodeService confirmCodeservice, PetRepository petRepository,
@@ -40,9 +40,9 @@ public class PetService {
         return petConverter.convertToDto(saved);
     }
 
-    public PetDto getByPublicId(String PublicId){
-        var fromDb = petRepository.findPetByPublicId(PublicId)
-                .orElseThrow(() -> new NotFoundException("publicId not found : " + PublicId));
+    public PetDto getByPublicId(String publicId){
+        var fromDb = petRepository.findPetByPublicId(publicId)
+                .orElseThrow(() -> new NotFoundException("publicId not found : " + publicId));
 
         return petConverter.convertToDto(fromDb);
     }
@@ -52,8 +52,8 @@ public class PetService {
         petRepository.delete(fromPet);
     }
 
-    public Pet getPetByPublicId(String PublicId){
-        return petRepository.findPetByPublicId(PublicId)
+    public Pet getPetByPublicId(String publicId){
+        return petRepository.findPetByPublicId(publicId)
                 .orElseThrow(() -> new NotFoundException(""));
     }
 

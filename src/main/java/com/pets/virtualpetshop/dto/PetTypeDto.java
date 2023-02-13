@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class PetTypeDto {
+public class PetTypeDto extends BaseDto {
     private String typeOfAnimal;
     private String breedOfAnimal;
 }
