@@ -34,7 +34,7 @@ public class PetService {
     public PetDto save(CreatePetRequest request){
         var saved = petConverter.toEntity(request);
         if (petRepository.existsPetByPublicId(saved.getPublicId())){
-            throw new GenericExistException("user already exist , mail : " + saved.getPublicId());
+            throw new GenericExistException("public id already exist , public id : " + saved.getPublicId());
         }
         petRepository.save(saved);
         return petConverter.convertToDto(saved);
