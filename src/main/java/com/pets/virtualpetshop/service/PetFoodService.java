@@ -14,7 +14,6 @@ public class PetFoodService {
     private final PetFoodRepository petFoodRepository;
     private final PetFoodConverter petFoodConverter;
 
-
     public PetFoodService(PetFoodRepository petFoodRepository, PetFoodConverter petFoodConverter) {
         this.petFoodRepository = petFoodRepository;
         this.petFoodConverter = petFoodConverter;
@@ -42,5 +41,4 @@ public class PetFoodService {
         return petFoodRepository.findPetFoodByPublicId(publicId)
                 .orElseThrow(()-> new NotFoundException(""));
     }
-
 }

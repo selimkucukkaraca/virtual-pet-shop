@@ -28,8 +28,8 @@ public class PetFoodTypeService {
         return petFoodTypeRepository.findPetFoodTypeByTypeOfFood(TypeOfFood);
     }
 
-    public void delete(String TypeOfFood){
-        var fromType = getPetFoodTypeByType(TypeOfFood);
+    public void delete(String typeOfFood){
+        var fromType = getPetFoodTypeByType(typeOfFood);
         petFoodTypeRepository.delete(fromType);
     }
 

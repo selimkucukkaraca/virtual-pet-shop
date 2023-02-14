@@ -39,7 +39,4 @@ public class PetTypeService {
                 .map(petType -> new PetTypeDto(petType.getTypeOfAnimal(), petType.getBreedOfAnimal()))
                 .collect(Collectors.toList());
     }
-
-
-
 }

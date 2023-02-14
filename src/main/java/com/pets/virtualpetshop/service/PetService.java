@@ -6,29 +6,19 @@ import com.pets.virtualpetshop.dto.request.CreatePetRequest;
 import com.pets.virtualpetshop.exception.NotFoundException;
 import com.pets.virtualpetshop.exception.generic.GenericExistException;
 import com.pets.virtualpetshop.model.Pet;
-import com.pets.virtualpetshop.repository.ConfirmCodeRepository;
 import com.pets.virtualpetshop.repository.PetRepository;
-import com.pets.virtualpetshop.util.MailSendService;
 import org.springframework.stereotype.Service;
 
 
 @Service
 public class PetService {
 
-    private final MailSendService mailSendService;
-    private final ConfirmCodeService confirmCodeService;
     private final PetRepository petRepository;
     private final PetConverter petConverter;
-    private final ConfirmCodeRepository confirmCodeRepository; //TODO: create confirm code service class
 
-    public PetService(MailSendService mailSendService,
-                      ConfirmCodeService confirmCodeservice, PetRepository petRepository,
-                      PetConverter petConverter, ConfirmCodeRepository confirmCodeRepository) {
-        this.mailSendService = mailSendService;
-        this.confirmCodeService = confirmCodeservice;
+    public PetService(PetRepository petRepository, PetConverter petConverter) {
         this.petRepository = petRepository;
         this.petConverter = petConverter;
-        this.confirmCodeRepository = confirmCodeRepository;
     }
 
     public PetDto save(CreatePetRequest request){
@@ -56,6 +46,4 @@ public class PetService {
         return petRepository.findPetByPublicId(publicId)
                 .orElseThrow(() -> new NotFoundException(""));
     }
-
-
 }
