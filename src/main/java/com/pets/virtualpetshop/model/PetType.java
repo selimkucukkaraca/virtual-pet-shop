@@ -22,7 +22,6 @@ public class PetType extends BaseEntity {
     private String breedOfAnimal;
     private String publicId = UUID.randomUUID().toString();
 
-
     public PetType(String typeOfAnimal, String breedOfAnimal) {
         this.typeOfAnimal = typeOfAnimal;
         this.breedOfAnimal = breedOfAnimal;
