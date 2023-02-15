@@ -3,23 +3,17 @@ package com.pets.virtualpetshop.dto.converter;
 import com.pets.virtualpetshop.dto.FoodAdvertDto;
 import com.pets.virtualpetshop.dto.request.CreateFoodAdvertRequest;
 import com.pets.virtualpetshop.model.FoodAdvert;
-import com.pets.virtualpetshop.service.FoodAdvertService;
 import com.pets.virtualpetshop.service.PetFoodService;
 import org.springframework.stereotype.Component;
 
 @Component
 public class FoodAdvertConverter {
 
-    private final FoodAdvertService foodAdvertService;
-    private final FoodAdvertConverter foodAdvertConverter;
     private final PetFoodConverter petFoodConverter;
     private final PetFoodService petFoodService;
 
-    public FoodAdvertConverter(FoodAdvertService foodAdvertService,
-                               FoodAdvertConverter foodAdvertConverter,
-                               PetFoodConverter petFoodConverter, PetFoodService petFoodService) {
-        this.foodAdvertService = foodAdvertService;
-        this.foodAdvertConverter = foodAdvertConverter;
+    public FoodAdvertConverter(PetFoodConverter petFoodConverter,
+                               PetFoodService petFoodService) {
         this.petFoodConverter = petFoodConverter;
         this.petFoodService = petFoodService;
     }

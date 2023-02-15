@@ -7,7 +7,7 @@ import lombok.*;
 @Setter
 @ToString
 @NoArgsConstructor
-public class CreateCreditCardRequest extends BaseEntity {
+public class CreditCardRequest extends BaseEntity {
 
     private String cardNumber;
     private String nameAndLastname;
