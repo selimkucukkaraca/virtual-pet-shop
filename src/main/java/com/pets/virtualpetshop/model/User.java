@@ -20,12 +20,14 @@ public class User extends BaseEntity{
     private boolean isActive = false;
     @OneToOne
     private ConfirmCode confirmCode;
+    @Enumerated(EnumType.STRING)
     private UserType userType;
 
-    public User(String username, String password, String mail, String imageUrl) {
+    public User(String username, String password, String mail, String imageUrl, UserType userType) {
         this.username = username;
         this.password = password;
         this.mail = mail;
         this.imageUrl = imageUrl;
+        this.userType = userType;
     }
 }

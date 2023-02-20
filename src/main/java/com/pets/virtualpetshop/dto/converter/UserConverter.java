@@ -3,6 +3,7 @@ package com.pets.virtualpetshop.dto.converter;
 import com.pets.virtualpetshop.dto.UserDto;
 import com.pets.virtualpetshop.dto.request.CreateUserRequest;
 import com.pets.virtualpetshop.model.User;
+import com.pets.virtualpetshop.model.UserType;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -22,7 +23,8 @@ public class UserConverter {
                 request.getUsername(),
                 request.getPassword(),
                 request.getMail(),
-                request.getImageUrl()
+                request.getImageUrl(),
+                UserType.valueOf(request.getUserType())
         );
     }
 }

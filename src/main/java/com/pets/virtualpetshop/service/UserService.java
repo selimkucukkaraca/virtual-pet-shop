@@ -73,11 +73,10 @@ public class UserService {
 
     public UserDto activeUser(String mail,int code){
         var user = getUserByMail(mail);
-        ConfirmCode confirmCode = confirmCodeRepository.findConfirmCodeByCode(code);
 
         if (user.getConfirmCode().getCode() == code) {
             user.setActive(true);
-            confirmCodeRepository.deleteById(confirmCode.getId());
+            confirmCodeRepository.deleteById(user.getConfirmCode().getId());
             userRepository.save(user);
             return userConverter.convertToDto(user);
         }
