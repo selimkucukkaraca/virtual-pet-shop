@@ -17,14 +17,14 @@ public class BankAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String CardNumber;
+    private String cardNumber;
     private String nameAndLastname;
     private int cvv;
     private String expirationDate;
     private double balance;
 
     public BankAccount(String cardNumber, String nameAndLastname, int cvv, String expirationDate,double balance) {
-        CardNumber = cardNumber;
+        this.cardNumber = cardNumber;
         this.nameAndLastname = nameAndLastname;
         this.cvv = cvv;
         this.expirationDate = expirationDate;

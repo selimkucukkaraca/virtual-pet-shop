@@ -11,7 +11,7 @@ public class VirtualPetShopApplication {
 		SpringApplication.run(VirtualPetShopApplication.class, args);
 	}
 }
-//TODO: pagination -> task 1 -> ok
+
 //TODO: buy advert -> seneryo 1: satin alimlar db de tutulur seneryo 2: satin alindiktan sonra bilgilendirme maili gonderilir
 //TODO: seneryo 3: iade seneryosu yazilir -> ilk once surec baslatilir sonrasinda iade onayi beklenir -> iade onaylanir ise bakiye
 //TODO: iade edilir

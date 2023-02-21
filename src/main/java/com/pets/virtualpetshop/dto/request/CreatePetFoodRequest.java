@@ -6,5 +6,5 @@ import lombok.Data;
 public class CreatePetFoodRequest {
     private String typeOfFood;
     private String brand;
-    private int Kg;
+    private int kg;
 }

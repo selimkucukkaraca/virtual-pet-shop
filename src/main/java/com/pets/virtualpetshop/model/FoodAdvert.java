@@ -3,6 +3,7 @@ package com.pets.virtualpetshop.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Getter
@@ -23,14 +24,16 @@ public class FoodAdvert extends BaseEntity {
     private String advertUpdateDate;
     @ManyToOne
     private PetFood petFood;
+    private double price;
 
     public FoodAdvert(String title, String body, String imageUrl
-            ,String advertDate, String advertUpdateDate, PetFood petFood) {
+            ,String advertDate, String advertUpdateDate, PetFood petFood, double price) {
         this.title = title;
         this.body = body;
         this.imageUrl = imageUrl;
         this.advertDate = advertDate;
         this.advertUpdateDate = advertUpdateDate;
         this.petFood = petFood;
+        this.price = price;
     }
 }

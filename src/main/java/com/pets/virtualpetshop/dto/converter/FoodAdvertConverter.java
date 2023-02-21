@@ -37,7 +37,8 @@ public class FoodAdvertConverter {
                 request.getImageUrl(),
                 request.getAdvertDate(),
                 request.getAdvertUpdateDate(),
-                petFoodService.getPetFoodByPublicId(request.getFoodPublicId())
+                petFoodService.getPetFoodByPublicId(request.getFoodPublicId()),
+                request.getPrice()
         );
     }
 }

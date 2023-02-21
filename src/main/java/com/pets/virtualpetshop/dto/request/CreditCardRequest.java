@@ -8,7 +8,6 @@ import lombok.*;
 @ToString
 @NoArgsConstructor
 public class CreditCardRequest extends BaseEntity {
-
     private String cardNumber;
     private String nameAndLastname;
     private int cvv;

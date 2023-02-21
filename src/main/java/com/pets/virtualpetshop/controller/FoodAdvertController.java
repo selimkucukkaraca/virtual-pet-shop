@@ -2,6 +2,7 @@ package com.pets.virtualpetshop.controller;
 
 import com.pets.virtualpetshop.dto.FoodAdvertDto;
 import com.pets.virtualpetshop.dto.request.CreateFoodAdvertRequest;
+import com.pets.virtualpetshop.dto.request.CreditCardRequest;
 import com.pets.virtualpetshop.service.FoodAdvertService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +29,12 @@ public class FoodAdvertController {
     @DeleteMapping
     public ResponseEntity<?> delete(@RequestParam String publicId){
         foodAdvertService.delete(publicId);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/buy")
+    public ResponseEntity<?> buy(@RequestBody CreditCardRequest creditCardRequest,@RequestParam String publicId){
+        foodAdvertService.buy(creditCardRequest,publicId);
         return ResponseEntity.noContent().build();
     }
 }
