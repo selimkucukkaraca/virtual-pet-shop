@@ -7,7 +7,11 @@ import com.pets.virtualpetshop.exception.NotFoundException;
 import com.pets.virtualpetshop.exception.generic.GenericExistException;
 import com.pets.virtualpetshop.model.PetAdvert;
 import com.pets.virtualpetshop.repository.PetAdvertRepository;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class PetAdvertService {
@@ -37,5 +41,14 @@ public class PetAdvertService {
     public PetAdvert getPetAdvertByPublicId(String publicId){
         return petAdvertRepository.findPetAdvertByPublicId(publicId)
                 .orElseThrow(()-> new NotFoundException(""));
+    }
+
+    public List<PetAdvertDto> getAll(int page, int size){
+        Pageable pageable = PageRequest.of(page,size);
+
+        return petAdvertRepository.findAll(pageable)
+                .stream()
+                .map(petAdvertConverter::convertToDto)
+                .toList();
     }
 }

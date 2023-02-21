@@ -14,7 +14,8 @@ public class UserConverter {
                 from.getUsername(),
                 from.getMail(),
                 from.getImageUrl(),
-                String.valueOf(from.getUserType())
+                String.valueOf(from.getUserType()),
+                from.isActive()
         );
     }
 

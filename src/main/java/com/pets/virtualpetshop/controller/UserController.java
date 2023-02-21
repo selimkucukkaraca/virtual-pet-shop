@@ -1,5 +1,6 @@
 package com.pets.virtualpetshop.controller;
 
+import com.pets.virtualpetshop.dto.PetAdvertDto;
 import com.pets.virtualpetshop.dto.UserDto;
 import com.pets.virtualpetshop.dto.request.CreateUserRequest;
 import com.pets.virtualpetshop.service.UserService;

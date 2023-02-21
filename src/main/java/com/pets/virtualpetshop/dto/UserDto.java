@@ -10,4 +10,5 @@ public class UserDto extends BaseDto {
     private String mail;
     private String imageUrl;
     private String userType;
+    private boolean isActive;
 }
