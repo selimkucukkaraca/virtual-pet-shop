@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Scanner;
 
 @Configuration
-public class DataLoader implements CommandLineRunner {
+public class DataLoader {
 
     @Autowired
     private BankAccountRepository bankAccountRepository;
@@ -22,7 +22,7 @@ public class DataLoader implements CommandLineRunner {
     @Value("${file.name}")
     private String FILE_NAME;
 
-    @Override
+   /* @Override
     public void run(String... args) throws Exception {
 
        try(Scanner scanner = new Scanner(new BufferedReader(new FileReader(FILE_NAME)))) {
@@ -51,5 +51,5 @@ public class DataLoader implements CommandLineRunner {
                }
            }
        }
-    }
+    }*/
 }

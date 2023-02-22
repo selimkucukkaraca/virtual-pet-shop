@@ -38,4 +38,10 @@ public class PetAdvertController {
         return ResponseEntity
                 .ok(petAdvertService.getAll(size,page));
     }
+
+    @PostMapping("/buy")
+    public ResponseEntity<?> buy(@RequestParam String mail, String publicId){
+        petAdvertService.buy(mail,publicId);
+        return ResponseEntity.noContent().build();
+    }
 }

@@ -10,7 +10,6 @@ import com.pets.virtualpetshop.model.BankAccount;
 import com.pets.virtualpetshop.model.BuyFoodAdvert;
 import com.pets.virtualpetshop.model.FoodAdvert;
 import com.pets.virtualpetshop.repository.FoodAdvertRepository;
-import com.pets.virtualpetshop.util.MailSendService;
 import org.springframework.stereotype.Service;
 
 
@@ -21,15 +20,13 @@ public class FoodAdvertService {
     private final FoodAdvertConverter foodAdvertConverter;
     private final BankAccountService bankAccountService;
     private final BuyFoodAdvertService buyFoodAdvertService;
-    private final MailSendService mailSendService;
 
     public FoodAdvertService(FoodAdvertRepository foodAdvertRepository, FoodAdvertConverter foodAdvertConverter,
-                             BankAccountService bankAccountService, BuyFoodAdvertService buyFoodAdvertService, MailSendService mailSendService) {
+                             BankAccountService bankAccountService, BuyFoodAdvertService buyFoodAdvertService) {
         this.foodAdvertRepository = foodAdvertRepository;
         this.foodAdvertConverter = foodAdvertConverter;
         this.bankAccountService = bankAccountService;
         this.buyFoodAdvertService = buyFoodAdvertService;
-        this.mailSendService = mailSendService;
     }
 
     public FoodAdvertDto save(CreateFoodAdvertRequest request){
@@ -56,7 +53,7 @@ public class FoodAdvertService {
         BankAccount bankAccount = bankAccountService.getByCardNumber(creditCardRequest.getCardNumber());
 
         if (fromDbFoodAdvert.getPrice() > bankAccount.getBalance()){
-            throw new RuntimeException("");
+            throw new RuntimeException("not enough balance");
         }
 
         bankAccount.setBalance(bankAccount.getBalance() - fromDbFoodAdvert.getPrice());

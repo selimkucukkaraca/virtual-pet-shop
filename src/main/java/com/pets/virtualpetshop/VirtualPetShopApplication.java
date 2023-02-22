@@ -16,3 +16,4 @@ public class VirtualPetShopApplication {
 //TODO: seneryo 3: iade seneryosu yazilir -> ilk once surec baslatilir sonrasinda iade onayi beklenir -> iade onaylanir ise bakiye
 //TODO: iade edilir
 //TODO: satin alim ek gelistirme : kullaniciya taksitle odeme imkani da sunulur
+
