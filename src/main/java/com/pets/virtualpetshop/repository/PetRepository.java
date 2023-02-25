@@ -1,5 +1,6 @@
 package com.pets.virtualpetshop.repository;
 
+import com.pets.virtualpetshop.dto.PetDto;
 import com.pets.virtualpetshop.model.Pet;
 import org.springframework.data.jpa.repository.JpaRepository;
 

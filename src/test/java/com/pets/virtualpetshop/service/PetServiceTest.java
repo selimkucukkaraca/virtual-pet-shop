@@ -9,6 +9,7 @@ import com.pets.virtualpetshop.repository.PetRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Objects;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -51,7 +52,7 @@ class PetServiceTest extends TestUtil {
     }
 
     @Test
-    public void getPetByPublicId_itShouldReturnPetDto(){
+    public void getPetByPublicId_itShouldReturnPet(){
         //given
         Pet pet = getPetList().get(0);
         String publicId = "test";
@@ -68,17 +69,32 @@ class PetServiceTest extends TestUtil {
 
     @Test
     public void delete(){
+        Pet pet = getPetList().get(0);
+
+        petRepository.delete(pet); //TODO
+
+        petService.delete(pet.getPublicId());
+
+        verify(petRepository).delete(pet);
+    }
+
+    @Test
+    public void getByPublicId_itShouldReturnPetDto(){
         //given
         Pet pet = getPetList().get(0);
+        PetDto petDto = getPetDtoList().get(0);
         String publicId = "test";
 
         //when
-        petRepository.delete(pet);
+        when(petRepository.findPetByPublicId(publicId)).thenReturn(Optional.ofNullable(pet));
+        when(petConverter.convertToDto(pet)).thenReturn(petDto);
 
-        petService.delete(publicId);
+        PetDto response = petService.getByPublicId(publicId);
 
         //then
-        verify(petRepository).delete(pet);
+        assertEquals(response,petDto);
+        verify(petRepository).findPetByPublicId(publicId);
+        verify(petConverter).convertToDto(pet);
     }
 
 }
