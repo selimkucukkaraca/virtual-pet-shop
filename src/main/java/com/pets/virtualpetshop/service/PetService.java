@@ -9,7 +9,6 @@ import com.pets.virtualpetshop.model.Pet;
 import com.pets.virtualpetshop.repository.PetRepository;
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class PetService {
 
