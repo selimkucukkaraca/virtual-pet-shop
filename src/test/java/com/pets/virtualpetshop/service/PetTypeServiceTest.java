@@ -86,6 +86,7 @@ public class PetTypeServiceTest extends TestUtil {
 
         //then
         verify(petTypeRepository).delete(petType);
+
     }
 
 
