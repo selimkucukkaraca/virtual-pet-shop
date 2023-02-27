@@ -1,11 +1,14 @@
 package com.pets.virtualpetshop;
 
 import com.pets.virtualpetshop.dto.PetDto;
+import com.pets.virtualpetshop.dto.PetFoodDto;
 import com.pets.virtualpetshop.dto.PetFoodTypeDto;
 import com.pets.virtualpetshop.dto.PetTypeDto;
+import com.pets.virtualpetshop.dto.request.CreatePetFoodRequest;
 import com.pets.virtualpetshop.dto.request.CreatePetFoodTypeRequest;
 import com.pets.virtualpetshop.dto.request.CreatePetRequest;
 import com.pets.virtualpetshop.model.Pet;
+import com.pets.virtualpetshop.model.PetFood;
 import com.pets.virtualpetshop.model.PetFoodType;
 import com.pets.virtualpetshop.model.PetType;
 
@@ -36,14 +39,19 @@ public class TestUtil {
     public CreatePetFoodTypeRequest getCreatePetFoodTypeRequest(){
         return new CreatePetFoodTypeRequest("test","test");
     }
-
     public List<PetFoodTypeDto> getPetFoodTypeDtoList(){
         return List.of(new PetFoodTypeDto("test","test"));
     }
-
     public List<PetFoodType> getPetFoodTypeList(){
-        return List.of(new PetFoodType("test","test"));
+        return List.of(new PetFoodType(1L,"test","test"));
     }
-
-
+    public CreatePetFoodRequest getCreatePetFoodRequest(){
+        return new CreatePetFoodRequest("test","test",1);
+    }
+    public List<PetFoodDto> getPetFoodDtoList(){
+        return List.of(new PetFoodDto(null,1,"test"));
+    }
+    public List<PetFood> getPetFoodList(){
+        return List.of(new PetFood(1L,null,1,"test"));
+    }
 }

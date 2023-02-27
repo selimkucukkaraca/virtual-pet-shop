@@ -66,7 +66,8 @@ class PetServiceTest extends TestUtil {
         verify(petRepository).findPetByPublicId(publicId);
     }
 
-/*    @Test
+    /*
+    @Test
     public void delete(){
         Pet pet = getPetList().get(0);
 
@@ -75,7 +76,8 @@ class PetServiceTest extends TestUtil {
         petService.delete(pet.getPublicId());
 
         verify(petRepository).delete(pet);
-    }*/
+    }
+    */
 
     @Test
     public void getByPublicId_itShouldReturnPetDto(){
@@ -86,6 +88,7 @@ class PetServiceTest extends TestUtil {
 
         //when
         when(petRepository.findPetByPublicId(publicId)).thenReturn(Optional.ofNullable(pet));
+        assert pet != null;
         when(petConverter.convertToDto(pet)).thenReturn(petDto);
 
         PetDto response = petService.getByPublicId(publicId);
