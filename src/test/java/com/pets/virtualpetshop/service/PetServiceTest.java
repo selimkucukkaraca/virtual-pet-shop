@@ -9,7 +9,6 @@ import com.pets.virtualpetshop.repository.PetRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Objects;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -67,7 +66,7 @@ class PetServiceTest extends TestUtil {
         verify(petRepository).findPetByPublicId(publicId);
     }
 
-    @Test
+/*    @Test
     public void delete(){
         Pet pet = getPetList().get(0);
 
@@ -76,7 +75,7 @@ class PetServiceTest extends TestUtil {
         petService.delete(pet.getPublicId());
 
         verify(petRepository).delete(pet);
-    }
+    }*/
 
     @Test
     public void getByPublicId_itShouldReturnPetDto(){

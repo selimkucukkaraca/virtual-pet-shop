@@ -1,9 +1,12 @@
 package com.pets.virtualpetshop;
 
 import com.pets.virtualpetshop.dto.PetDto;
+import com.pets.virtualpetshop.dto.PetFoodTypeDto;
 import com.pets.virtualpetshop.dto.PetTypeDto;
+import com.pets.virtualpetshop.dto.request.CreatePetFoodTypeRequest;
 import com.pets.virtualpetshop.dto.request.CreatePetRequest;
 import com.pets.virtualpetshop.model.Pet;
+import com.pets.virtualpetshop.model.PetFoodType;
 import com.pets.virtualpetshop.model.PetType;
 
 import java.util.List;
@@ -29,5 +32,18 @@ public class TestUtil {
     public List<Pet> getPetList(){
         return List.of(new Pet(1L,null,1,"test","test"));
     }
+
+    public CreatePetFoodTypeRequest getCreatePetFoodTypeRequest(){
+        return new CreatePetFoodTypeRequest("test","test");
+    }
+
+    public List<PetFoodTypeDto> getPetFoodTypeDtoList(){
+        return List.of(new PetFoodTypeDto("test","test"));
+    }
+
+    public List<PetFoodType> getPetFoodTypeList(){
+        return List.of(new PetFoodType("test","test"));
+    }
+
 
 }
