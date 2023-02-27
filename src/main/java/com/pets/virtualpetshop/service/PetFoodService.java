@@ -3,7 +3,6 @@ package com.pets.virtualpetshop.service;
 import com.pets.virtualpetshop.dto.PetFoodDto;
 import com.pets.virtualpetshop.dto.converter.PetFoodConverter;
 import com.pets.virtualpetshop.dto.request.CreatePetFoodRequest;
-import com.pets.virtualpetshop.dto.request.CreditCardRequest;
 import com.pets.virtualpetshop.exception.NotFoundException;
 import com.pets.virtualpetshop.model.PetFood;
 import com.pets.virtualpetshop.repository.PetFoodRepository;
